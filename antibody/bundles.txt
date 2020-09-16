@@ -1,0 +1,10 @@
+mafredri/zsh-async
+robbyrussell/oh-my-zsh
+robbyrussell/oh-my-zsh path:plugins/autojump
+robbyrussell/oh-my-zsh path:plugins/git
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+
+# these should be at last
+sindresorhus/pure
