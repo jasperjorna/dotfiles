@@ -2,7 +2,7 @@
 alias reload!='exec "$SHELL" -l'
 alias art='php artisan'
 alias wh='wormhole'
-alias ip='curl ifconfig.co'
+alias ip='curl icanhazip.com'
 
 function phpfix() {
     if [ -n "$1" ]
@@ -19,4 +19,17 @@ function bass() {
 
 function vshare() {
     valet share --subdomain=jasperjorna-msml --region=eu
+}
+
+function db() {
+    [ ! -f .env ] && { echo "No .env file found."; return; }
+
+    if [ -f .env ]; then
+        export $(grep -v '^#' .env | xargs)
+    fi
+
+    DB_URL="${DB_CONNECTION}://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}"
+
+    echo "Opening ${DB_DATABASE}"
+    open $DB_URL
 }
