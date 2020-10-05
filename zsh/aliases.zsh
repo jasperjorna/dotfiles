@@ -3,6 +3,7 @@ alias reload!='exec "$SHELL" -l'
 alias art='php artisan'
 alias wh='wormhole'
 alias ip='curl icanhazip.com'
+alias nah='git reset --hard && git clean -df'
 
 function phpfix() {
     if [ -n "$1" ]
