@@ -18,7 +18,10 @@ export VEDITOR='code'
 
 # composer global
 export PATH=~/.composer/vendor/bin:$PATH
-export COMPOSER_MEMORY_LIMIT=-1
+
+# jenv (java)
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # android sdk
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
@@ -42,6 +45,10 @@ source ~/.zsh_plugins.sh
 for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
   source "$file"
 done
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 autoload -Uz compinit
 for dump in ~/.zcompdump(N.mh+24); do
