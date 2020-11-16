@@ -4,6 +4,8 @@ alias art='php artisan'
 alias wh='wormhole'
 alias ip='curl icanhazip.com'
 alias nah='git reset --hard && git clean -df'
+alias sites='cd ~/code/sites'
+alias apps='cd ~/code/apps'
 
 function phpfix() {
     if [ -n "$1" ]
