@@ -29,7 +29,6 @@
 [difftool]
 	prompt = false
 [commit]
-	template = ~/.dotfiles/git/template.txt
 	gpgSign = true
 [color "diff-highlight"]
 	oldNormal = red bold

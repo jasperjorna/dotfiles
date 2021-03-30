@@ -7,6 +7,10 @@ alias nah='git reset --hard && git clean -df'
 alias sites='cd ~/code/sites'
 alias apps='cd ~/code/apps'
 
+function arm() {
+  arch -x86_64 $@
+}
+
 function phpfix() {
     if [ -n "$1" ]
     then
@@ -35,4 +39,14 @@ function db() {
 
     echo "Opening ${DB_DATABASE}"
     open $DB_URL
+}
+
+function podclean() {
+    if [ "${PWD##*/}" != 'ios' ]; then
+        echo "Current directory is not 'ios'"
+        return
+    else
+        echo "Reinstalling Pods"
+        rm -rf Pods && rm -rf Podfile.lock && pod install
+    fi
 }
